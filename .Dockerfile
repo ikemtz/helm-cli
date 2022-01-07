@@ -6,8 +6,7 @@ RUN tar -zxvf ./helm-v3.7.2-linux-amd64.tar.gz
 
 FROM ubuntu:latest
 WORKDIR /workspace
-ENV PATH="/workspace:${PATH}"
-COPY --from=downloader /linux-amd64/helm .
+COPY --from=downloader /linux-amd64/helm /usr/local/bin
 RUN apt-get update && \
   apt-get install -y wget git && \
   helm plugin install https://github.com/chartmuseum/helm-push.git
