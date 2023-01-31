@@ -1,5 +1,5 @@
 # helm-cli
-A Container Image with Helm preloaded
+A Container Image with Helm, and the OpenShift CLI applications preloaded.
 
 In addition, the [Chart Museum cm-push](https://github.com/chartmuseum/helm-push) plugin has also been preloaded.
 
