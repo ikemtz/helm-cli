@@ -11,5 +11,6 @@ COPY --from=downloader /linux-amd64/helm /usr/local/bin
 COPY --from=downloader /kubectl /usr/local/bin
 COPY --from=downloader /oc /usr/local/bin
 RUN apt-get update && \
-  apt-get install -y wget git curl && \
-  helm plugin install https://github.com/chartmuseum/helm-push.git
+  apt-get install -y wget git curl ca-certificates && \
+  helm plugin install https://github.com/chartmuseum/helm-push.git && \
+  mkdir /.kube && chmod 777 /.kube
